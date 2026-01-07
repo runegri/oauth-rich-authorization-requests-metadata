@@ -52,7 +52,7 @@ OAuth 2.0 Rich Authorization Requests (RAR), as defined in {{RFC9396}}, enables 
 
 This document defines a machine-readable metadata structure for advertising authorization details type documentation and JSON Schema {{JSON.Schema}} definitions via OAuth Authorization Server Metadata {{RFC8414}} and OAuth Resource Server Metadata {{RFC9728}}.
 
-In addition, this document defines a new OAuth error code, `insufficient_authorization_details`, enabling resource servers to return actionable authorization details objects to clients.
+In addition, this document defines a new OAuth error code, `insufficient_authorization_details`, enabling resource servers to return actionable authorization details objects to clients.t
 
 --- middle
 
