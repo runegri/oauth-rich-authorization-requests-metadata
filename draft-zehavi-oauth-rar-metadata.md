@@ -297,7 +297,7 @@ Example resource server response with OPTIONAL authorization_details:
 
 * If encountering error `insufficient_authorization_details`, check if body.authorization_details exists and if provided MAY include in subsequent OAuth request.
 * Otherwise consult metadata:
-    * Fetch resource metadata to discover accepted authorization servers and supported **accepted authorization_details types**.
+    * Fetch resource metadata to discover accepted authorization servers and supported **authorization_details types**.
     * Fetch authorization server metadata to discover `authorization_details_types_supported`.
     * Fetch authorization server's `authorization_details_types_metadata_endpoint` to obtain metadata and schema
     * Locate schema or retrieve schema_uri.
@@ -472,7 +472,7 @@ Resource server requires payment approval and responds with:
     }]
     }
 
-Note: the resource server has added the ephemeral attributes: `interactionId`, `riskProfile`.
+Note: the resource server has added the ephemeral attributes `interactionId` and `riskProfile`.
 
 ### Client initiates OAuth flow using the provided authorization_details object
 
