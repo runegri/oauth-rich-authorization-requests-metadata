@@ -98,8 +98,9 @@ There are two main proposed flows:
 (A) User +---|          |                       |       Server        |
    Starts|   |          |<----------------------|                     |
    Flow  +-->|          | (C) 403 Forbidden     +---------------------+
-             |          |     WWW-Authenticate
-             |          |     error="insufficient_authorization_details"
+             |          |     WWW-Authenticate: Bearer
+             |          |     error="insufficient_authorization_details",
+             |          |     resource_metadata="...url"
              |          |           :
              |          |        Resource       +---------------------+
              |          | (D) Metadata Request  |   Resource Server   |
@@ -166,9 +167,10 @@ Figure: Client learns to construct valid authorization details objects from meta
 (A) User +---|          |                       |       Server       |
    Starts|   |          |<----------------------|                    |
    Flow  +-->|  Client  | (C) 403 Forbidden     +--------------------+
-             |          |     WWW-Authenticate
-             |          |     error="insufficient_authorization_details"
-             |          |     + authorization_details
+             |          |     WWW-Authenticate: Bearer
+             |          |     error="insufficient_authorization_details",
+             |          |     resource_metadata="...url"
+             |          |     + HTTP body contains authorization_details
              |          |        :
              |          |        :              +--------------------+
              |          |        :              |   Authorization    |
@@ -444,6 +446,14 @@ Client uses access token obtained at login to call payment initiation API
             "iban": "DE02100100109307118603"
         }
     }
+
+### Resource server signals insufficient_authorization_details
+
+Resource server requires payment approval and responds with:
+
+    HTTP/1.1 403 Forbidden
+    WWW-Authenticate: Bearer error="insufficient_authorization_details",
+        resource_metadata="https://server.example.com/.well-known/oauth-protected-resource/payments"
 
 ### Resource server signals insufficient_authorization_details with actionable RAR object
 
