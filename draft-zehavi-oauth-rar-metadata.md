@@ -290,7 +290,9 @@ Clients MAY use the provided `authorization_details` in a subsequent OAuth reque
 Example resource server response with OPTIONAL authorization_details:
 
     HTTP/1.1 403 Forbidden
-    WWW-Authenticate: Bearer error="insufficient_authorization_details"
+    WWW-Authenticate: Bearer error="insufficient_authorization_details",
+        resource_metadata="https://resource.example.com/
+        .well-known/oauth-protected-resource/payments"
     Content-Type: application/json
     Cache-Control: no-store
 
