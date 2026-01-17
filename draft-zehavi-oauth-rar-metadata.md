@@ -100,7 +100,7 @@ There are two main proposed flows:
    Flow  +-->|          | (C) 403 Forbidden     +---------------------+
              |          |     WWW-Authenticate: Bearer
              |          |     error="insufficient_authorization_details",
-             |          |     resource_metadata="https://resource.example.com/.well-known/oauth-protected-resource"
+             |          |     resource_metadata="[resource metadata url]"
              |          |           :
              |          |        Resource       +---------------------+
              |          | (D) Metadata Request  |   Resource Server   |
@@ -169,7 +169,7 @@ Figure: Client learns to construct valid authorization details objects from meta
    Flow  +-->|  Client  | (C) 403 Forbidden     +--------------------+
              |          |     WWW-Authenticate: Bearer
              |          |     error="insufficient_authorization_details",
-             |          |     resource_metadata="https://resource.example.com/.well-known/oauth-protected-resource"
+             |          |     resource_metadata="[resource metadata url]"
              |          |     + HTTP body contains authorization_details
              |          |        :
              |          |        :              +--------------------+
