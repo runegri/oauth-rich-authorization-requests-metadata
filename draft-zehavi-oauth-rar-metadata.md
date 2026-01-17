@@ -281,6 +281,7 @@ Example HTTP response:
 Resource server MAY provide alongside the `insufficient_authorization_details` error, an HTTP response body of content type application/json, containing the required authorization details to satisfy the currently failing request.
 
 Note:
+
 * Authorization details objects provided by a resource server in an error response, are intended for its trusted authorization servers, as advertised by the Resource Server’s metadata endpoint.
 * Resource servers SHALL provide authorization_details objects, only in case **all** trusted authorization servers accept the **authorization details type**.
 
