@@ -217,25 +217,25 @@ This document specifies that the metadata attribute: `authorization_details_type
 
 Note: When resource servers accept access tokens *from several authorization servers*, interoperability is maintained as client can discover each authorization server' supported authorization details types.
 
-The following is a non-normative example response:
+The following is a non-normative example response with the added `authorization_details_types_supported` attribute:
 
-  HTTP/1.1 200 OK
-  Content-Type: application/json
+    HTTP/1.1 200 OK
+    Content-Type: application/json
 
-  {
-    "resource":
-    "https://resource.example.com",
-    "authorization_servers":
-      ["https://as1.example.com",
-       "https://as2.example.net"],
-    "bearer_methods_supported":
-      ["header", "body"],
-    "scopes_supported":
-      ["profile", "email", "phone"],
-    "resource_documentation":
-      "https://resource.example.com/resource_documentation.html",
-    "authorization_details_types_supported": ["payment_initiation"]
-  }
+    {
+      "resource":
+      "https://resource.example.com",
+      "authorization_servers":
+        ["https://as1.example.com",
+         "https://as2.example.net"],
+      "bearer_methods_supported":
+        ["header", "body"],
+      "scopes_supported":
+        ["profile", "email", "phone"],
+      "resource_documentation":
+        "https://resource.example.com/resource_documentation.html",
+      "authorization_details_types_supported": ["payment_initiation"]
+    }
 
 
 # Authorization Details Types Metadata Endpoint
