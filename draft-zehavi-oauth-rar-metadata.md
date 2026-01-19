@@ -234,7 +234,8 @@ The following is a non-normative example response with the added `authorization_
         ["profile", "email", "phone"],
       "resource_documentation":
         "https://resource.example.com/resource_documentation.html",
-      "authorization_details_types_supported": ["payment_initiation"]
+      "authorization_details_types_supported":
+        ["payment_initiation"]
     }
 
 
