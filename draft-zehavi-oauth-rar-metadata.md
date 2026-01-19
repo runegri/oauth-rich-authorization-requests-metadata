@@ -215,7 +215,7 @@ Figure: Client obtains authorization details object from resource server's error
 
 This document specifies that the metadata attribute: `authorization_details_types_supported`, defined by RAR {{RFC9396}}, shall be included as an OPTIONAL response attributes in Protected Resource Metadata {{RFC9728}}.
 
-Note: When resource servers accept access tokens *from several authorization servers*, interoperability is maintained as client can discover per authorization server its supported authorization details types.
+Note: When resource servers accept access tokens *from several authorization servers*, interoperability is maintained as client can discover each authorization server' supported authorization details types.
 
 # Authorization Details Types Metadata Endpoint
 
@@ -282,8 +282,8 @@ Resource server MAY provide alongside the `insufficient_authorization_details` e
 
 Note:
 
-* Authorization details objects provided by a resource server in an error response, are intended for its trusted authorization servers, as advertised by the Resource Server’s metadata endpoint.
-* Resource servers SHALL provide authorization_details objects, only in case **all** trusted authorization servers accept the **authorization details type**.
+* Authorization details objects provided by a resource server in an error response are intended for its trusted authorization servers, as advertised by the Resource Server’s metadata endpoint.
+* Resource servers SHALL provide authorization_details objects only if **all** trusted authorization servers accept the **authorization details type** used.
 
 HTTP response body definition:
 
